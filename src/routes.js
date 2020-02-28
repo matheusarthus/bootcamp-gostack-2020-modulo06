@@ -29,10 +29,13 @@ function Routes() {
       <Stack.Screen
         name="User"
         component={User}
-        options={{
-          title: 'Stars',
-          headerBackTitleVisible: false,
-          headerTitleAlign: 'center',}}/>
+        options={
+          ({ route }) => ({
+            title: route.params.user.name,
+            headerBackTitleVisible: false,
+            headerTitleAlign: 'center', })
+          }
+        />
     </Stack.Navigator>
   </NavigationContainer>
   );
